@@ -28,6 +28,13 @@ module.exports = (robot) ->
     robot.hear /呼叫黑魔導/i, (res) ->
      candidates = ['我愛91,Joy <3', '我愛小JJ', '我愛Daisy><', '我愛yachu', '我愛Al...,沒事']
      res.send res.random candidates
+
+    robot.respond /show users$/i, (msg) ->
+     response = ""
+     for own key, user of robot.brain.data.users
+       response += "#{user.id} #{user.name}"
+       response += " <#{user.email_address}>" if user.email_address
+       response += "\n"      
   
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
