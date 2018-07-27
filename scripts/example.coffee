@@ -7,12 +7,28 @@
 #   Uncomment the ones you want to try and experiment with.
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
+_randomNum: (max,min=0) ->
+    return Math.floor(Math.random() * (max - min) + min)
 
 module.exports = (robot) ->
 
-  # robot.hear /badger/i, (res) ->
-  #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
-  #
+   robot.hear /badger/i, (res) ->
+     res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
+
+   robot.hear /安安/i, (res) ->
+     res.send "安安你好"
+
+    robot.hear /ㄏㄏ/i, (res) ->
+     res.send "我愛雅筑"
+
+    robot.hear /本週飛鏢王/i, (res) ->
+     res.send "\雅筑/\雅筑/\雅筑/\雅筑/"
+
+    robot.hear /呼叫黑魔導/i, (res) ->
+     candidates = ['我愛91,Joy <3', '我愛小JJ', '我愛Daisy><', '我愛yachu', '我愛Al...,沒事']
+     
+     res.send res.random candidates
+  
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
   #   if doorType is "pod bay"
