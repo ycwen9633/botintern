@@ -16,17 +16,17 @@ module.exports = (robot) ->
      res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
 
    robot.hear /安安/i, (res) ->
-     res.send "安安你好"
+     user = res.envelope.user.name
+     res.send " #{user} 安安你好"
 
     robot.hear /ㄏㄏ/i, (res) ->
      res.send "我愛雅筑"
 
     robot.hear /本週飛鏢王/i, (res) ->
-     res.send "\雅筑/\雅筑/\雅筑/\雅筑/"
+     res.send "\\雅筑/\\雅筑/\\雅筑/\\雅筑/"
 
     robot.hear /呼叫黑魔導/i, (res) ->
      candidates = ['我愛91,Joy <3', '我愛小JJ', '我愛Daisy><', '我愛yachu', '我愛Al...,沒事']
-     
      res.send res.random candidates
   
   # robot.respond /open the (.*) doors/i, (res) ->
