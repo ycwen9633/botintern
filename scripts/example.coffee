@@ -34,7 +34,8 @@ module.exports = (robot) ->
      for own key, user of robot.brain.data.users
        response += "#{user.id} #{user.name}"
        response += " <#{user.email_address}>" if user.email_address
-       response += "\n"      
+       response += "\n" 
+      res.send response     
   
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
